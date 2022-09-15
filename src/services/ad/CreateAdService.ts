@@ -5,7 +5,7 @@ interface Props {
   name: string;
   yearsPlaying: number;
   discord: string;
-  weekDays: number[];
+  weekDays: string;
   hourStart: number;
   hourEnd: number;
   useVoiceChannel: boolean;
@@ -23,14 +23,16 @@ export class CreateAdService {
     useVoiceChannel
   }: Props) {
     const ad = await prismaClient.ad.create({
-      gameId,
-      name,
-      yearsPlaying,
-      discord,
-      weekDays,
-      hourStart,
-      hourEnd,
-      useVoiceChannel
+      data: {
+        gameId,
+        name,
+        yearsPlaying,
+        discord,
+        weekDays,
+        hourStart,
+        hourEnd,
+        useVoiceChannel
+      }
     });
 
     return ad;

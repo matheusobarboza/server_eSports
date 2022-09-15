@@ -22,7 +22,7 @@ export class CreateAdController {
       name,
       yearsPlaying,
       discord,
-      weekDays,
+      weekDays: weekDays.join(','),
       hourStart: convertHourStringToMinutes(hourStart),
       hourEnd: convertHourStringToMinutes(hourEnd),
       useVoiceChannel
