@@ -12,7 +12,7 @@ const listAdsByGameController = new ListAdsByGameController();
 const listDiscordByAdController = new ListDiscordByAdController();
 
 router.get('/games', listGamesController.handle);
-router.post('/ads', createAdController.handle);
+router.post('/games/:id/ads', createAdController.handle);
 router.get('/games/:id/ads', listAdsByGameController.handle);
 router.get('/ads/:id/discord', listDiscordByAdController.handle);
 
